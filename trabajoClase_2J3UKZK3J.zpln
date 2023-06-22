@@ -1,0 +1,964 @@
+﻿{
+  "paragraphs": [
+    {
+      "text": "val data = spark\n    .read\n    .option(\"inferSchema\", \"true\")\n    .option(\"header\", \"true\")\n    .option(\"delimiter\",\";\")\n    .csv(\"/workspace/zeppelin-paavanzada/archivos/enemdu_vivienda_hogar_2023_I_trimestre.csv\")\n    \n    ",
+      "user": "anonymous",
+      "dateUpdated": "2023-06-22T17:10:33+0000",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "\u001b[1m\u001b[34mdata\u001b[0m: \u001b[1m\u001b[32morg.apache.spark.sql.DataFrame\u001b[0m = [area: int, ciudad: int ... 55 more fields]\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            {
+              "jobUrl": "http://10.0.5.2:4040/jobs/job?id=0",
+              "$$hashKey": "object:995"
+            },
+            {
+              "jobUrl": "http://10.0.5.2:4040/jobs/job?id=1",
+              "$$hashKey": "object:996"
+            }
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1686867644108_1557286998",
+      "id": "paragraph_1686867644108_1557286998",
+      "dateCreated": "2023-06-15T22:20:44+0000",
+      "dateStarted": "2023-06-22T17:10:33+0000",
+      "dateFinished": "2023-06-22T17:10:39+0000",
+      "status": "FINISHED",
+      "focus": true,
+      "$$hashKey": "object:683"
+    },
+    {
+      "text": "data.printSchema\n",
+      "user": "anonymous",
+      "dateUpdated": "2023-06-22T17:15:05+0000",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "root\n |-- area: integer (nullable = true)\n |-- ciudad: integer (nullable = true)\n |-- conglomerado: integer (nullable = true)\n |-- panelm: integer (nullable = true)\n |-- vivienda: integer (nullable = true)\n |-- hogar: integer (nullable = true)\n |-- vi01: integer (nullable = true)\n |-- vi02: integer (nullable = true)\n |-- vi03a: integer (nullable = true)\n |-- vi03b: integer (nullable = true)\n |-- vi04a: integer (nullable = true)\n |-- vi04b: integer (nullable = true)\n |-- vi05a: integer (nullable = true)\n |-- vi05b: integer (nullable = true)\n |-- vi06: integer (nullable = true)\n |-- vi07: integer (nullable = true)\n |-- vi07a: integer (nullable = true)\n |-- vi07b: integer (nullable = true)\n |-- vi08: integer (nullable = true)\n |-- vi09: integer (nullable = true)\n |-- vi09a: string (nullable = true)\n |-- vi09b: string (nullable = true)\n |-- vi10: integer (nullable = true)\n |-- vi101: string (nullable = true)\n |-- vi102: string (nullable = true)\n |-- vi10a: integer (nullable = true)\n |-- vi11: integer (nullable = true)\n |-- vi12: integer (nullable = true)\n |-- vi13: integer (nullable = true)\n |-- vi14: integer (nullable = true)\n |-- vi141: integer (nullable = true)\n |-- vi142: string (nullable = true)\n |-- vi143: string (nullable = true)\n |-- vi144: string (nullable = true)\n |-- vi1511: integer (nullable = true)\n |-- vi1521: string (nullable = true)\n |-- vi1512: integer (nullable = true)\n |-- vi1522: string (nullable = true)\n |-- vi1531: string (nullable = true)\n |-- vi1541: string (nullable = true)\n |-- vi1532: string (nullable = true)\n |-- vi1542: string (nullable = true)\n |-- vi1533: string (nullable = true)\n |-- vi1543: string (nullable = true)\n |-- vi1534: string (nullable = true)\n |-- vi1544: string (nullable = true)\n |-- vi1535: string (nullable = true)\n |-- vi1545: string (nullable = true)\n |-- vi1536: string (nullable = true)\n |-- vi1546: string (nullable = true)\n |-- estrato: integer (nullable = true)\n |-- fexp: string (nullable = true)\n |-- upm: long (nullable = true)\n |-- id_vivienda: long (nullable = true)\n |-- id_hogar: decimal(20,0) (nullable = true)\n |-- periodo: integer (nullable = true)\n |-- mes: integer (nullable = true)\n\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1687279027283_1805584123",
+      "id": "paragraph_1687279027283_1805584123",
+      "dateCreated": "2023-06-20T16:37:07+0000",
+      "dateStarted": "2023-06-22T17:15:05+0000",
+      "dateFinished": "2023-06-22T17:15:05+0000",
+      "status": "FINISHED",
+      "$$hashKey": "object:684"
+    },
+    {
+      "text": "\r\n\r\nval myDataSchemaDDL = \"area INT, ciudad INT, conglomerado INT, panelm INT, vivienda INT, hogar INT,via_Acceso_a_Vivienda INT, tipoVivienda INT, material_de_Techo INT, estado_del_Techo INT,material_Piso INT, estado_Piso INT, material_de_Paredes INT, estado_de_la_Paredes INT, cuartos_Disponibles_del_Hogar INT, cuartos_Exclucivas_para_Dormir INT, cuartos_Exclucivas_Para_Negocios INT, cuarto_Exclusivas_para_Cosina INT,hogar_cocina_Principal_con INT,tipo_de_Servicio_Higienico INT,no_Tiene_Servicio_Higienico STRING,tipo_Instalacion_Sanitaria_Utiliza STRING,obtiene_Agua_principal_Hogar INT,medidor_de_Agua STRING,obtiene_junta_de_Agua STRING,agua_Resive_Vivienda INT, servicio_de_Ducha INT, tipo_Alumbrado INT, eliminacion_de_la_Basura INT, ocupacion_de_esta_Vivienda INT, paga_de_Alquiler INT, arriendo_Incluye_el_Pago_Agua STRING,arriendo_Incluye_el_Pago_Luz STRING, parentesco_con_Propietario_Vivienda STRING, tiene_Vehiculos INT, cuantos_Vehiculos STRING, tiene_Motos INT, cuantas_Motos STRING, utiliza_Combustible_Super STRING,gastos_Combustible_Super STRING, utiliza_Combustible_Extra STRING, gastos_Combustible_Extra STRING, utiliza_Combustible_Diesel STRING, gastos_Combustible_Diesel STRING, utiliza_Combustible_ECopais STRING,gastos_Combustible_Ecopais STRING, utiliza_Electricidad STRING, gastos_Electricidad STRING, utiliza_Gas STRING, gastos_Gas STRING, estrato INT, fexp STRING, upm LONG, id_Vivienda LONG,id_Hogar DECIMAL, periodo INT, mes INT\"",
+      "user": "anonymous",
+      "dateUpdated": "2023-06-22T17:15:07+0000",
+      "progress": 0,
+      "config": {
+        "colWidth": 12,
+        "fontSize": 9,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "\u001b[1m\u001b[34mmyDataSchemaDDL\u001b[0m: \u001b[1m\u001b[32mString\u001b[0m = area INT, ciudad INT, conglomerado INT, panelm INT, vivienda INT, hogar INT,via_Acceso_a_Vivienda INT, tipoVivienda INT, material_de_Techo INT, estado_del_Techo INT,material_Piso INT, estado_Piso INT, material_de_Paredes INT, estado_de_la_Paredes INT, cuartos_Disponibles_del_Hogar INT, cuartos_Exclucivas_para_Dormir INT, cuartos_Exclucivas_Para_Negocios INT, cuarto_Exclusivas_para_Cosina INT,hogar_cocina_Principal_con INT,tipo_de_Servicio_Higienico INT,no_Tiene_Servicio_Higienico STRING,tipo_Instalacion_Sanitaria_Utiliza STRING,obtiene_Agua_principal_Hogar INT,medidor_de_Agua STRING,obtiene_junta_de_Agua STRING,agua_Resive_Vivienda INT, servicio_de_Ducha INT, tipo_Alumbrado INT, eliminacion_de_la_Basura INT, ocupacion_de_esta_Vivienda ...\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1686869013073_355488380",
+      "id": "paragraph_1686869013073_355488380",
+      "dateCreated": "2023-06-15T22:43:33+0000",
+      "dateStarted": "2023-06-22T17:15:07+0000",
+      "dateFinished": "2023-06-22T17:15:07+0000",
+      "status": "FINISHED",
+      "$$hashKey": "object:685"
+    },
+    {
+      "text": "val data = spark\n    .read\n    .schema(myDataSchemaDDL)\n    .option(\"inferSchema\", \"true\")\n    .option(\"header\", \"true\")\n    .option(\"delimiter\",\";\")\n    .csv(\"/workspace/zeppelin-paavanzada/archivos/enemdu_vivienda_hogar_2023_I_trimestre.csv\")",
+      "user": "anonymous",
+      "dateUpdated": "2023-06-22T17:15:09+0000",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "\u001b[1m\u001b[34mdata\u001b[0m: \u001b[1m\u001b[32morg.apache.spark.sql.DataFrame\u001b[0m = [area: int, ciudad: int ... 55 more fields]\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1687407664942_1719830590",
+      "id": "paragraph_1687407664942_1719830590",
+      "dateCreated": "2023-06-22T04:21:04+0000",
+      "dateStarted": "2023-06-22T17:15:09+0000",
+      "dateFinished": "2023-06-22T17:15:09+0000",
+      "status": "FINISHED",
+      "$$hashKey": "object:686"
+    },
+    {
+      "text": "data.printSchema",
+      "user": "anonymous",
+      "dateUpdated": "2023-06-22T17:15:11+0000",
+      "progress": 0,
+      "config": {
+        "colWidth": 12,
+        "fontSize": 9,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "root\n |-- area: integer (nullable = true)\n |-- ciudad: integer (nullable = true)\n |-- conglomerado: integer (nullable = true)\n |-- panelm: integer (nullable = true)\n |-- vivienda: integer (nullable = true)\n |-- hogar: integer (nullable = true)\n |-- via_Acceso_a_Vivienda: integer (nullable = true)\n |-- tipoVivienda: integer (nullable = true)\n |-- material_de_Techo: integer (nullable = true)\n |-- estado_del_Techo: integer (nullable = true)\n |-- material_Piso: integer (nullable = true)\n |-- estado_Piso: integer (nullable = true)\n |-- material_de_Paredes: integer (nullable = true)\n |-- estado_de_la_Paredes: integer (nullable = true)\n |-- cuartos_Disponibles_del_Hogar: integer (nullable = true)\n |-- cuartos_Exclucivas_para_Dormir: integer (nullable = true)\n |-- cuartos_Exclucivas_Para_Negocios: integer (nullable = true)\n |-- cuarto_Exclusivas_para_Cosina: integer (nullable = true)\n |-- hogar_cocina_Principal_con: integer (nullable = true)\n |-- tipo_de_Servicio_Higienico: integer (nullable = true)\n |-- no_Tiene_Servicio_Higienico: string (nullable = true)\n |-- tipo_Instalacion_Sanitaria_Utiliza: string (nullable = true)\n |-- obtiene_Agua_principal_Hogar: integer (nullable = true)\n |-- medidor_de_Agua: string (nullable = true)\n |-- obtiene_junta_de_Agua: string (nullable = true)\n |-- agua_Resive_Vivienda: integer (nullable = true)\n |-- servicio_de_Ducha: integer (nullable = true)\n |-- tipo_Alumbrado: integer (nullable = true)\n |-- eliminacion_de_la_Basura: integer (nullable = true)\n |-- ocupacion_de_esta_Vivienda: integer (nullable = true)\n |-- paga_de_Alquiler: integer (nullable = true)\n |-- arriendo_Incluye_el_Pago_Agua: string (nullable = true)\n |-- arriendo_Incluye_el_Pago_Luz: string (nullable = true)\n |-- parentesco_con_Propietario_Vivienda: string (nullable = true)\n |-- tiene_Vehiculos: integer (nullable = true)\n |-- cuantos_Vehiculos: string (nullable = true)\n |-- tiene_Motos: integer (nullable = true)\n |-- cuantas_Motos: string (nullable = true)\n |-- utiliza_Combustible_Super: string (nullable = true)\n |-- gastos_Combustible_Super: string (nullable = true)\n |-- utiliza_Combustible_Extra: string (nullable = true)\n |-- gastos_Combustible_Extra: string (nullable = true)\n |-- utiliza_Combustible_Diesel: string (nullable = true)\n |-- gastos_Combustible_Diesel: string (nullable = true)\n |-- utiliza_Combustible_ECopais: string (nullable = true)\n |-- gastos_Combustible_Ecopais: string (nullable = true)\n |-- utiliza_Electricidad: string (nullable = true)\n |-- gastos_Electricidad: string (nullable = true)\n |-- utiliza_Gas: string (nullable = true)\n |-- gastos_Gas: string (nullable = true)\n |-- estrato: integer (nullable = true)\n |-- fexp: string (nullable = true)\n |-- upm: long (nullable = true)\n |-- id_Vivienda: long (nullable = true)\n |-- id_Hogar: decimal(10,0) (nullable = true)\n |-- periodo: integer (nullable = true)\n |-- mes: integer (nullable = true)\n\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1687407917160_1937040665",
+      "id": "paragraph_1687407917160_1937040665",
+      "dateCreated": "2023-06-22T04:25:17+0000",
+      "dateStarted": "2023-06-22T17:15:11+0000",
+      "dateFinished": "2023-06-22T17:15:12+0000",
+      "status": "FINISHED",
+      "$$hashKey": "object:687"
+    },
+    {
+      "text": "\r\ndata.select(\"area\").distinct().sort(\"area\").show()\r\ndata.select(\"ciudad\").distinct().sort(\"ciudad\").show()\r\ndata.select(\"conglomerado\").distinct().sort(\"conglomerado\").show()\r\ndata.select(\"panelm\").distinct().sort(\"panelm\").show()\r\ndata.select(\"vivienda\").distinct().sort(\"vivienda\").show()\r\ndata.select(\"hogar\").distinct().sort(\"hogar\").show()\r\ndata.select(\"via_Acceso_a_Vivienda\").distinct().sort(\"via_Acceso_a_Vivienda\").show()\r\ndata.select(\"tipoVivienda\").distinct().sort(\"tipoVivienda\").show()\r\ndata.select(\"material_de_Techo\").distinct().sort(\"material_de_Techo\").show()\r\ndata.select(\"estado_del_Techo\").distinct().sort(\"estado_del_Techo\").show()\r\ndata.select(\"material_Piso\").distinct().sort(\"material_Piso\").show()\r\ndata.select(\"estado_Piso\").distinct().sort(\"estado_Piso\").show()\r\ndata.select(\"material_de_Paredes\").distinct().sort(\"material_de_Paredes\").show()\r\ndata.select(\"estado_de_la_Paredes\").distinct().sort(\"estado_de_la_Paredes\").show()\r\ndata.select(\"cuartos_Disponibles_del_Hogar\").distinct().sort(\"cuartos_Disponibles_del_Hogar\").show()\r\ndata.select(\"cuartos_Exclucivas_para_Dormir\").distinct().sort(\"cuartos_Exclucivas_para_Dormir\").show()\r\ndata.select(\"cuartos_Exclucivas_Para_Negocios\").distinct().sort(\"cuartos_Exclucivas_Para_Negocios\").show()\r\ndata.select(\"cuarto_Exclusivas_para_Cosina\").distinct().sort(\"cuarto_Exclusivas_para_Cosina\").show()\r\ndata.select(\"hogar_cocina_Principal_con\").distinct().sort(\"hogar_cocina_Principal_con\").show()\r\ndata.select(\"tipo_de_Servicio_Higienico\").distinct().sort(\"tipo_de_Servicio_Higienico\").show()\r\ndata.select(\"no_Tiene_Servicio_Higienico\").distinct().sort(\"no_Tiene_Servicio_Higienico\").show()\r\ndata.select(\"tipo_Instalacion_Sanitaria_Utiliza\").distinct().sort(\"tipo_Instalacion_Sanitaria_Utiliza\").show()\r\ndata.select(\"obtiene_Agua_principal_Hogar\").distinct().sort(\"obtiene_Agua_principal_Hogar\").show()\r\ndata.select(\"medidor_de_Agua\").distinct().sort(\"medidor_de_Agua\").show()\r\ndata.select(\"obtiene_junta_de_Agua\").distinct().sort(\"obtiene_junta_de_Agua\").show()\r\ndata.select(\"agua_Resive_Vivienda\").distinct().sort(\"agua_Resive_Vivienda\").show()\r\ndata.select(\"servicio_de_Ducha\").distinct().sort(\"servicio_de_Ducha\").show()\r\ndata.select(\"tipo_Alumbrado\").distinct().sort(\"tipo_Alumbrado\").show()\r\ndata.select(\"eliminacion_de_la_Basura\").distinct().sort(\"eliminacion_de_la_Basura\").show()\r\ndata.select(\"ocupacion_de_esta_Vivienda\").distinct().sort(\"ocupacion_de_esta_Vivienda\").show()\r\ndata.select(\"paga_de_Alquiler\").distinct().sort(\"paga_de_Alquiler\").show()\r\ndata.select(\"arriendo_Incluye_el_Pago_Agua\").distinct().sort(\"arriendo_Incluye_el_Pago_Agua\").show()\r\ndata.select(\"arriendo_Incluye_el_Pago_Luz\").distinct().sort(\"arriendo_Incluye_el_Pago_Luz\").show()\r\ndata.select(\"parentesco_con_Propietario_Vivienda\").distinct().sort(\"parentesco_con_Propietario_Vivienda\").show()\r\ndata.select(\"tiene_Vehiculos\").distinct().sort(\"tiene_Vehiculos\").show()\r\ndata.select(\"cuantos_Vehiculos\").distinct().sort(\"cuantos_Vehiculos\").show()\r\ndata.select(\"tiene_Motos\").distinct().sort(\"tiene_Motos\").show()\r\ndata.select(\"cuantas_Motos\").distinct().sort(\"cuantas_Motos\").show()\r\ndata.select(\"utiliza_Combustible_Super\").distinct().sort(\"utiliza_Combustible_Super\").show()\r\ndata.select(\"gastos_Combustible_Super\").distinct().sort(\"gastos_Combustible_Super\").show()\r\ndata.select(\"utiliza_Combustible_Extra\").distinct().sort(\"utiliza_Combustible_Extra\").show()\r\ndata.select(\"gastos_Combustible_Extra\").distinct().sort(\"gastos_Combustible_Extra\").show()\r\ndata.select(\"utiliza_Combustible_Diesel\").distinct().sort(\"utiliza_Combustible_Diesel\").show()\r\ndata.select(\"gastos_Combustible_Diesel\").distinct().sort(\"gastos_Combustible_Diesel\").show()\r\ndata.select(\"utiliza_Combustible_ECopais\").distinct().sort(\"utiliza_Combustible_ECopais\").show()\r\ndata.select(\"gastos_Combustible_Ecopais\").distinct().sort(\"gastos_Combustible_Ecopais\").show()\r\ndata.select(\"utiliza_Electricidad\").distinct().sort(\"utiliza_Electricidad\").show()\r\ndata.select(\"gastos_Electricidad\").distinct().sort(\"gastos_Electricidad\").show()\r\ndata.select(\"utiliza_Gas\").distinct().sort(\"utiliza_Gas\").show()\r\ndata.select(\"gastos_Gas\").distinct().sort(\"gastos_Gas\").show()\r\ndata.select(\"estrato\").distinct().sort(\"estrato\").show()\r\ndata.select(\"fexp\").distinct().sort(\"fexp\").show()\r\ndata.select(\"upm\").distinct().sort(\"upm\").show()\r\ndata.select(\"id_Vivienda\").distinct().sort(\"id_Vivienda\").show()\r\ndata.select(\"id_Hogar\").distinct().sort(\"id_Hogar\").show()\r\ndata.select(\"periodo\").distinct().sort(\"periodo\").show()\r\ndata.select(\"mes\").distinct().sort(\"mes\").show()",
+      "user": "anonymous",
+      "dateUpdated": "2023-06-22T17:15:13+0000",
+      "progress": 33,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+----+\n|area|\n+----+\n|   1|\n|   2|\n+----+\n\n+------+\n|ciudad|\n+------+\n| 10150|\n| 10151|\n| 10152|\n| 10156|\n| 10158|\n| 10160|\n| 10161|\n| 10162|\n| 10166|\n| 10167|\n| 10170|\n| 10171|\n| 10250|\n| 10350|\n| 10354|\n| 10356|\n| 10357|\n| 10358|\n| 10450|\n| 10550|\n+------+\nonly showing top 20 rows\n\n+------------+\n|conglomerado|\n+------------+\n|           2|\n|           3|\n|           4|\n|           6|\n|           8|\n|           9|\n|          12|\n|          14|\n|          15|\n|          18|\n|          19|\n|          22|\n|          24|\n|          25|\n|          28|\n|          30|\n|          32|\n|          34|\n|          46|\n|          47|\n+------------+\nonly showing top 20 rows\n\n+------+\n|panelm|\n+------+\n|    25|\n|    26|\n|    27|\n|    28|\n|    29|\n|    31|\n|    32|\n|    34|\n|    35|\n|    37|\n|    41|\n|    42|\n+------+\n\n+--------+\n|vivienda|\n+--------+\n|       1|\n|       2|\n|       3|\n|       4|\n|       5|\n|       6|\n|       7|\n|       8|\n|       9|\n|      10|\n+--------+\n\n+-----+\n|hogar|\n+-----+\n|    1|\n|    2|\n|    3|\n|    4|\n|    5|\n+-----+\n\n+---------------------+\n|via_Acceso_a_Vivienda|\n+---------------------+\n|                    1|\n|                    2|\n|                    3|\n|                    4|\n|                    5|\n|                    6|\n+---------------------+\n\n+------------+\n|tipoVivienda|\n+------------+\n|           1|\n|           2|\n|           3|\n|           4|\n|           5|\n|           6|\n+------------+\n\n+-----------------+\n|material_de_Techo|\n+-----------------+\n|                1|\n|                2|\n|                3|\n|                4|\n|                5|\n|                6|\n+-----------------+\n\n+----------------+\n|estado_del_Techo|\n+----------------+\n|               1|\n|               2|\n|               3|\n+----------------+\n\n+-------------+\n|material_Piso|\n+-------------+\n|            1|\n|            2|\n|            3|\n|            4|\n|            5|\n|            6|\n|            7|\n|            8|\n+-------------+\n\n+-----------+\n|estado_Piso|\n+-----------+\n|          1|\n|          2|\n|          3|\n+-----------+\n\n+-------------------+\n|material_de_Paredes|\n+-------------------+\n|                  1|\n|                  2|\n|                  3|\n|                  4|\n|                  5|\n|                  6|\n|                  7|\n+-------------------+\n\n+--------------------+\n|estado_de_la_Paredes|\n+--------------------+\n|                   1|\n|                   2|\n|                   3|\n+--------------------+\n\n+-----------------------------+\n|cuartos_Disponibles_del_Hogar|\n+-----------------------------+\n|                            1|\n|                            2|\n|                            3|\n|                            4|\n|                            5|\n|                            6|\n|                            7|\n|                            8|\n|                            9|\n|                           10|\n|                           11|\n|                           12|\n|                           13|\n+-----------------------------+\n\n+------------------------------+\n|cuartos_Exclucivas_para_Dormir|\n+------------------------------+\n|                             0|\n|                             1|\n|                             2|\n|                             3|\n|                             4|\n|                             5|\n|                             6|\n|                             7|\n|                             8|\n|                             9|\n|                            10|\n+------------------------------+\n\n+--------------------------------+\n|cuartos_Exclucivas_Para_Negocios|\n+--------------------------------+\n|                               0|\n|                               1|\n|                               2|\n|                               3|\n+--------------------------------+\n\n+-----------------------------+\n|cuarto_Exclusivas_para_Cosina|\n+-----------------------------+\n|                            1|\n|                            2|\n+-----------------------------+\n\n+--------------------------+\n|hogar_cocina_Principal_con|\n+--------------------------+\n|                         1|\n|                         2|\n|                         3|\n|                         4|\n+--------------------------+\n\n+--------------------------+\n|tipo_de_Servicio_Higienico|\n+--------------------------+\n|                         1|\n|                         2|\n|                         3|\n|                         4|\n|                         5|\n+--------------------------+\n\n+---------------------------+\n|no_Tiene_Servicio_Higienico|\n+---------------------------+\n|                           |\n|                          1|\n|                          2|\n|                          3|\n+---------------------------+\n\n+----------------------------------+\n|tipo_Instalacion_Sanitaria_Utiliza|\n+----------------------------------+\n|                                  |\n|                                 1|\n|                                 2|\n|                                 3|\n|                                 4|\n+----------------------------------+\n\n+----------------------------+\n|obtiene_Agua_principal_Hogar|\n+----------------------------+\n|                           1|\n|                           2|\n|                           3|\n|                           4|\n|                           5|\n|                           6|\n|                           7|\n+----------------------------+\n\n+---------------+\n|medidor_de_Agua|\n+---------------+\n|               |\n|              1|\n|              2|\n+---------------+\n\n+---------------------+\n|obtiene_junta_de_Agua|\n+---------------------+\n|                     |\n|                    1|\n|                    2|\n+---------------------+\n\n+--------------------+\n|agua_Resive_Vivienda|\n+--------------------+\n|                   1|\n|                   2|\n|                   3|\n|                   4|\n+--------------------+\n\n+-----------------+\n|servicio_de_Ducha|\n+-----------------+\n|                1|\n|                2|\n|                3|\n+-----------------+\n\n+--------------+\n|tipo_Alumbrado|\n+--------------+\n|             1|\n|             2|\n|             3|\n|             4|\n+--------------+\n\n+------------------------+\n|eliminacion_de_la_Basura|\n+------------------------+\n|                       1|\n|                       2|\n|                       3|\n|                       4|\n|                       5|\n+------------------------+\n\n+--------------------------+\n|ocupacion_de_esta_Vivienda|\n+--------------------------+\n|                         1|\n|                         2|\n|                         3|\n|                         4|\n|                         5|\n|                         6|\n|                         7|\n+--------------------------+\n\n+----------------+\n|paga_de_Alquiler|\n+----------------+\n|              10|\n|              12|\n|              15|\n|              20|\n|              21|\n|              24|\n|              25|\n|              30|\n|              35|\n|              40|\n|              45|\n|              50|\n|              54|\n|              55|\n|              60|\n|              65|\n|              67|\n|              70|\n|              75|\n|              78|\n+----------------+\nonly showing top 20 rows\n\n+-----------------------------+\n|arriendo_Incluye_el_Pago_Agua|\n+-----------------------------+\n|                             |\n|                            1|\n|                            2|\n+-----------------------------+\n\n+----------------------------+\n|arriendo_Incluye_el_Pago_Luz|\n+----------------------------+\n|                            |\n|                           1|\n|                           2|\n+----------------------------+\n\n+-----------------------------------+\n|parentesco_con_Propietario_Vivienda|\n+-----------------------------------+\n|                                   |\n|                                  1|\n|                                  2|\n+-----------------------------------+\n\n+---------------+\n|tiene_Vehiculos|\n+---------------+\n|              1|\n|              2|\n+---------------+\n\n+-----------------+\n|cuantos_Vehiculos|\n+-----------------+\n|                 |\n|                1|\n|                2|\n|                3|\n|                4|\n|                5|\n|                6|\n+-----------------+\n\n+-----------+\n|tiene_Motos|\n+-----------+\n|          1|\n|          2|\n+-----------+\n\n+-------------+\n|cuantas_Motos|\n+-------------+\n|             |\n|            1|\n|            2|\n|            3|\n|            4|\n+-------------+\n\n+-------------------------+\n|utiliza_Combustible_Super|\n+-------------------------+\n|                         |\n|                        1|\n|                        2|\n+-------------------------+\n\n+------------------------+\n|gastos_Combustible_Super|\n+------------------------+\n|                        |\n|                       0|\n|                      10|\n|                     100|\n|                     110|\n|                      12|\n|                     120|\n|                     140|\n|                      15|\n|                     150|\n|                      16|\n|                     160|\n|                      20|\n|                     200|\n|                     240|\n|                      25|\n|                     250|\n|                     260|\n|                     280|\n|                      30|\n+------------------------+\nonly showing top 20 rows\n\n+-------------------------+\n|utiliza_Combustible_Extra|\n+-------------------------+\n|                         |\n|                        1|\n|                        2|\n+-------------------------+\n\n+------------------------+\n|gastos_Combustible_Extra|\n+------------------------+\n|                        |\n|                       0|\n|                      10|\n|                     100|\n|                     105|\n|                     108|\n|                     110|\n|                      12|\n|                     120|\n|                      13|\n|                     130|\n|                     135|\n|                      14|\n|                     140|\n|                      15|\n|                     150|\n|                      16|\n|                     160|\n|                      17|\n|                     170|\n+------------------------+\nonly showing top 20 rows\n\n+--------------------------+\n|utiliza_Combustible_Diesel|\n+--------------------------+\n|                          |\n|                         1|\n|                         2|\n+--------------------------+\n\n+-------------------------+\n|gastos_Combustible_Diesel|\n+-------------------------+\n|                         |\n|                        0|\n|                        1|\n|                       10|\n|                      100|\n|                       12|\n|                      120|\n|                      130|\n|                      140|\n|                       15|\n|                      150|\n|                      160|\n|                      180|\n|                       20|\n|                      200|\n|                      240|\n|                       25|\n|                      250|\n|                       28|\n|                      280|\n+-------------------------+\nonly showing top 20 rows\n\n+---------------------------+\n|utiliza_Combustible_ECopais|\n+---------------------------+\n|                           |\n|                          1|\n|                          2|\n+---------------------------+\n\n+--------------------------+\n|gastos_Combustible_Ecopais|\n+--------------------------+\n|                          |\n|                         0|\n|                         1|\n|                        10|\n|                       100|\n|                       104|\n|                       110|\n|                       112|\n|                        12|\n|                       120|\n|                       125|\n|                       130|\n|                       135|\n|                        14|\n|                       140|\n|                       145|\n|                        15|\n|                       150|\n|                        16|\n|                       160|\n+--------------------------+\nonly showing top 20 rows\n\n+--------------------+\n|utiliza_Electricidad|\n+--------------------+\n|                    |\n|                   1|\n|                   2|\n+--------------------+\n\n+-------------------+\n|gastos_Electricidad|\n+-------------------+\n|                   |\n|                  0|\n|                  1|\n|                 10|\n|                 12|\n|                 13|\n|                 15|\n|                 16|\n|                  2|\n|                 20|\n|                 23|\n|                 24|\n|                  3|\n|                 30|\n|                 35|\n|                 45|\n|                  5|\n|                 50|\n|                  6|\n|                 60|\n+-------------------+\nonly showing top 20 rows\n\n+-----------+\n|utiliza_Gas|\n+-----------+\n|           |\n|          1|\n|          2|\n+-----------+\n\n+----------+\n|gastos_Gas|\n+----------+\n|          |\n|         1|\n|         2|\n|         3|\n|        80|\n+----------+\n\n+-------+\n|estrato|\n+-------+\n|    111|\n|    112|\n|    113|\n|    121|\n|    122|\n|    123|\n|    211|\n|    212|\n|    213|\n|    221|\n|    222|\n|    223|\n|    311|\n|    312|\n|    313|\n|    321|\n|    322|\n|    323|\n|    411|\n|    412|\n+-------+\nonly showing top 20 rows\n\n+----------------+\n|            fexp|\n+----------------+\n| 10,021415206972|\n|10,1396627618141|\n|10,3882392713653|\n|10,5725061971619|\n|10,5733380442176|\n|10,6963682559093|\n|10,7384614217504|\n|100,118936277967|\n|100,171628543301|\n|100,185064394728|\n|100,310293472098|\n|100,316304458178|\n|100,354667431475|\n| 100,48035882648|\n|100,558702290212|\n|100,726395101575|\n|100,838420436465|\n|100,989149689036|\n| 1003,0719414194|\n|101,055298033873|\n+----------------+\nonly showing top 20 rows\n\n+-----------+\n|        upm|\n+-----------+\n|10150000201|\n|10150000304|\n|10150001101|\n|10150001307|\n|10150001701|\n|10150001706|\n|10150002103|\n|10150003203|\n|10150003302|\n|10150003602|\n|10150003806|\n|10150003901|\n|10150003903|\n|10150004901|\n|10150005101|\n|10150005103|\n|10150005203|\n|10150005401|\n|10150005601|\n|10150005701|\n+-----------+\nonly showing top 20 rows\n\n+------------------+\n|       id_Vivienda|\n+------------------+\n|101500002010260102|\n|101500002010260202|\n|101500002010260302|\n|101500002010260402|\n|101500002010260502|\n|101500002010260602|\n|101500002010260902|\n|101500003040420103|\n|101500003040420203|\n|101500003040420303|\n|101500003040420403|\n|101500003040420503|\n|101500003040420603|\n|101500003040420703|\n|101500011010280101|\n|101500011010280201|\n|101500011010280401|\n|101500011010280501|\n|101500011010280601|\n|101500011010280701|\n+------------------+\nonly showing top 20 rows\n\n+--------+\n|id_Hogar|\n+--------+\n|    null|\n+--------+\n\n+-------+\n|periodo|\n+-------+\n| 202301|\n| 202302|\n| 202303|\n+-------+\n\n+---+\n|mes|\n+---+\n|  1|\n|  2|\n|  3|\n+---+\n\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            {
+              "jobUrl": "http://10.0.5.2:4040/jobs/job?id=2",
+              "$$hashKey": "object:1206"
+            },
+            {
+              "jobUrl": "http://10.0.5.2:4040/jobs/job?id=3",
+              "$$hashKey": "object:1207"
+            },
+            {
+              "jobUrl": "http://10.0.5.2:4040/jobs/job?id=4",
+              "$$hashKey": "object:1208"
+            },
+            {
+              "jobUrl": "http://10.0.5.2:4040/jobs/job?id=5",
+              "$$hashKey": "object:1209"
+            },
+            {
+              "jobUrl": "http://10.0.5.2:4040/jobs/job?id=6",
+              "$$hashKey": "object:1210"
+            },
+            {
+              "jobUrl": "http://10.0.5.2:4040/jobs/job?id=7",
+              "$$hashKey": "object:1211"
+            },
+            {
+              "jobUrl": "http://10.0.5.2:4040/jobs/job?id=8",
+              "$$hashKey": "object:1212"
+            },
+            {
+              "jobUrl": "http://10.0.5.2:4040/jobs/job?id=9",
+              "$$hashKey": "object:1213"
+            },
+            {
+              "jobUrl": "http://10.0.5.2:4040/jobs/job?id=10",
+              "$$hashKey": "object:1214"
+            },
+            {
+              "jobUrl": "http://10.0.5.2:4040/jobs/job?id=11",
+              "$$hashKey": "object:1215"
+            },
+            {
+              "jobUrl": "http://10.0.5.2:4040/jobs/job?id=12",
+              "$$hashKey": "object:1216"
+            },
+            {
+              "jobUrl": "http://10.0.5.2:4040/jobs/job?id=13",
+              "$$hashKey": "object:1217"
+            },
+            {
+              "jobUrl": "http://10.0.5.2:4040/jobs/job?id=14",
+              "$$hashKey": "object:1218"
+            },
+            {
+              "jobUrl": "http://10.0.5.2:4040/jobs/job?id=15",
+              "$$hashKey": "object:1219"
+            },
+            {
+              "jobUrl": "http://10.0.5.2:4040/jobs/job?id=16",
+              "$$hashKey": "object:1220"
+            },
+            {
+              "jobUrl": "http://10.0.5.2:4040/jobs/job?id=17",
+              "$$hashKey": "object:1221"
+            },
+            {
+              "jobUrl": "http://10.0.5.2:4040/jobs/job?id=18",
+              "$$hashKey": "object:1222"
+            },
+            {
+              "jobUrl": "http://10.0.5.2:4040/jobs/job?id=19",
+              "$$hashKey": "object:1223"
+            },
+            {
+              "jobUrl": "http://10.0.5.2:4040/jobs/job?id=20",
+              "$$hashKey": "object:1224"
+            },
+            {
+              "jobUrl": "http://10.0.5.2:4040/jobs/job?id=21",
+              "$$hashKey": "object:1225"
+            },
+            {
+              "jobUrl": "http://10.0.5.2:4040/jobs/job?id=22",
+              "$$hashKey": "object:1226"
+            },
+            {
+              "jobUrl": "http://10.0.5.2:4040/jobs/job?id=23",
+              "$$hashKey": "object:1227"
+            },
+            {
+              "jobUrl": "http://10.0.5.2:4040/jobs/job?id=24",
+              "$$hashKey": "object:1228"
+            },
+            {
+              "jobUrl": "http://10.0.5.2:4040/jobs/job?id=25",
+              "$$hashKey": "object:1229"
+            },
+            {
+              "jobUrl": "http://10.0.5.2:4040/jobs/job?id=26",
+              "$$hashKey": "object:1230"
+            },
+            {
+              "jobUrl": "http://10.0.5.2:4040/jobs/job?id=27",
+              "$$hashKey": "object:1231"
+            },
+            {
+              "jobUrl": "http://10.0.5.2:4040/jobs/job?id=28",
+              "$$hashKey": "object:1232"
+            },
+            {
+              "jobUrl": "http://10.0.5.2:4040/jobs/job?id=29",
+              "$$hashKey": "object:1233"
+            },
+            {
+              "jobUrl": "http://10.0.5.2:4040/jobs/job?id=30",
+              "$$hashKey": "object:1234"
+            },
+            {
+              "jobUrl": "http://10.0.5.2:4040/jobs/job?id=31",
+              "$$hashKey": "object:1235"
+            },
+            {
+              "jobUrl": "http://10.0.5.2:4040/jobs/job?id=32",
+              "$$hashKey": "object:1236"
+            },
+            {
+              "jobUrl": "http://10.0.5.2:4040/jobs/job?id=33",
+              "$$hashKey": "object:1237"
+            },
+            {
+              "jobUrl": "http://10.0.5.2:4040/jobs/job?id=34",
+              "$$hashKey": "object:1238"
+            },
+            {
+              "jobUrl": "http://10.0.5.2:4040/jobs/job?id=35",
+              "$$hashKey": "object:1239"
+            },
+            {
+              "jobUrl": "http://10.0.5.2:4040/jobs/job?id=36",
+              "$$hashKey": "object:1240"
+            },
+            {
+              "jobUrl": "http://10.0.5.2:4040/jobs/job?id=37",
+              "$$hashKey": "object:1241"
+            },
+            {
+              "jobUrl": "http://10.0.5.2:4040/jobs/job?id=38",
+              "$$hashKey": "object:1242"
+            },
+            {
+              "jobUrl": "http://10.0.5.2:4040/jobs/job?id=39",
+              "$$hashKey": "object:1243"
+            },
+            {
+              "jobUrl": "http://10.0.5.2:4040/jobs/job?id=40",
+              "$$hashKey": "object:1244"
+            },
+            {
+              "jobUrl": "http://10.0.5.2:4040/jobs/job?id=41",
+              "$$hashKey": "object:1245"
+            },
+            {
+              "jobUrl": "http://10.0.5.2:4040/jobs/job?id=42",
+              "$$hashKey": "object:1246"
+            },
+            {
+              "jobUrl": "http://10.0.5.2:4040/jobs/job?id=43",
+              "$$hashKey": "object:1247"
+            },
+            {
+              "jobUrl": "http://10.0.5.2:4040/jobs/job?id=44",
+              "$$hashKey": "object:1248"
+            },
+            {
+              "jobUrl": "http://10.0.5.2:4040/jobs/job?id=45",
+              "$$hashKey": "object:1249"
+            },
+            {
+              "jobUrl": "http://10.0.5.2:4040/jobs/job?id=46",
+              "$$hashKey": "object:1250"
+            },
+            {
+              "jobUrl": "http://10.0.5.2:4040/jobs/job?id=47",
+              "$$hashKey": "object:1251"
+            },
+            {
+              "jobUrl": "http://10.0.5.2:4040/jobs/job?id=48",
+              "$$hashKey": "object:1252"
+            },
+            {
+              "jobUrl": "http://10.0.5.2:4040/jobs/job?id=49",
+              "$$hashKey": "object:1253"
+            },
+            {
+              "jobUrl": "http://10.0.5.2:4040/jobs/job?id=50",
+              "$$hashKey": "object:1254"
+            },
+            {
+              "jobUrl": "http://10.0.5.2:4040/jobs/job?id=51",
+              "$$hashKey": "object:1255"
+            },
+            {
+              "jobUrl": "http://10.0.5.2:4040/jobs/job?id=52",
+              "$$hashKey": "object:1256"
+            },
+            {
+              "jobUrl": "http://10.0.5.2:4040/jobs/job?id=53",
+              "$$hashKey": "object:1257"
+            },
+            {
+              "jobUrl": "http://10.0.5.2:4040/jobs/job?id=54",
+              "$$hashKey": "object:1258"
+            },
+            {
+              "jobUrl": "http://10.0.5.2:4040/jobs/job?id=55",
+              "$$hashKey": "object:1259"
+            },
+            {
+              "jobUrl": "http://10.0.5.2:4040/jobs/job?id=56",
+              "$$hashKey": "object:1260"
+            },
+            {
+              "jobUrl": "http://10.0.5.2:4040/jobs/job?id=57",
+              "$$hashKey": "object:1261"
+            },
+            {
+              "jobUrl": "http://10.0.5.2:4040/jobs/job?id=58",
+              "$$hashKey": "object:1262"
+            },
+            {
+              "jobUrl": "http://10.0.5.2:4040/jobs/job?id=59",
+              "$$hashKey": "object:1263"
+            },
+            {
+              "jobUrl": "http://10.0.5.2:4040/jobs/job?id=60",
+              "$$hashKey": "object:1264"
+            },
+            {
+              "jobUrl": "http://10.0.5.2:4040/jobs/job?id=61",
+              "$$hashKey": "object:1265"
+            },
+            {
+              "jobUrl": "http://10.0.5.2:4040/jobs/job?id=62",
+              "$$hashKey": "object:1266"
+            },
+            {
+              "jobUrl": "http://10.0.5.2:4040/jobs/job?id=63",
+              "$$hashKey": "object:1267"
+            },
+            {
+              "jobUrl": "http://10.0.5.2:4040/jobs/job?id=64",
+              "$$hashKey": "object:1268"
+            },
+            {
+              "jobUrl": "http://10.0.5.2:4040/jobs/job?id=65",
+              "$$hashKey": "object:1269"
+            },
+            {
+              "jobUrl": "http://10.0.5.2:4040/jobs/job?id=66",
+              "$$hashKey": "object:1270"
+            },
+            {
+              "jobUrl": "http://10.0.5.2:4040/jobs/job?id=67",
+              "$$hashKey": "object:1271"
+            },
+            {
+              "jobUrl": "http://10.0.5.2:4040/jobs/job?id=68",
+              "$$hashKey": "object:1272"
+            },
+            {
+              "jobUrl": "http://10.0.5.2:4040/jobs/job?id=69",
+              "$$hashKey": "object:1273"
+            },
+            {
+              "jobUrl": "http://10.0.5.2:4040/jobs/job?id=70",
+              "$$hashKey": "object:1274"
+            },
+            {
+              "jobUrl": "http://10.0.5.2:4040/jobs/job?id=71",
+              "$$hashKey": "object:1275"
+            },
+            {
+              "jobUrl": "http://10.0.5.2:4040/jobs/job?id=72",
+              "$$hashKey": "object:1276"
+            },
+            {
+              "jobUrl": "http://10.0.5.2:4040/jobs/job?id=73",
+              "$$hashKey": "object:1277"
+            },
+            {
+              "jobUrl": "http://10.0.5.2:4040/jobs/job?id=74",
+              "$$hashKey": "object:1278"
+            },
+            {
+              "jobUrl": "http://10.0.5.2:4040/jobs/job?id=75",
+              "$$hashKey": "object:1279"
+            },
+            {
+              "jobUrl": "http://10.0.5.2:4040/jobs/job?id=76",
+              "$$hashKey": "object:1280"
+            },
+            {
+              "jobUrl": "http://10.0.5.2:4040/jobs/job?id=77",
+              "$$hashKey": "object:1281"
+            },
+            {
+              "jobUrl": "http://10.0.5.2:4040/jobs/job?id=78",
+              "$$hashKey": "object:1282"
+            },
+            {
+              "jobUrl": "http://10.0.5.2:4040/jobs/job?id=79",
+              "$$hashKey": "object:1283"
+            },
+            {
+              "jobUrl": "http://10.0.5.2:4040/jobs/job?id=80",
+              "$$hashKey": "object:1284"
+            },
+            {
+              "jobUrl": "http://10.0.5.2:4040/jobs/job?id=81",
+              "$$hashKey": "object:1285"
+            },
+            {
+              "jobUrl": "http://10.0.5.2:4040/jobs/job?id=82",
+              "$$hashKey": "object:1286"
+            },
+            {
+              "jobUrl": "http://10.0.5.2:4040/jobs/job?id=83",
+              "$$hashKey": "object:1287"
+            },
+            {
+              "jobUrl": "http://10.0.5.2:4040/jobs/job?id=84",
+              "$$hashKey": "object:1288"
+            },
+            {
+              "jobUrl": "http://10.0.5.2:4040/jobs/job?id=85",
+              "$$hashKey": "object:1289"
+            },
+            {
+              "jobUrl": "http://10.0.5.2:4040/jobs/job?id=86",
+              "$$hashKey": "object:1290"
+            },
+            {
+              "jobUrl": "http://10.0.5.2:4040/jobs/job?id=87",
+              "$$hashKey": "object:1291"
+            },
+            {
+              "jobUrl": "http://10.0.5.2:4040/jobs/job?id=88",
+              "$$hashKey": "object:1292"
+            },
+            {
+              "jobUrl": "http://10.0.5.2:4040/jobs/job?id=89",
+              "$$hashKey": "object:1293"
+            },
+            {
+              "jobUrl": "http://10.0.5.2:4040/jobs/job?id=90",
+              "$$hashKey": "object:1294"
+            },
+            {
+              "jobUrl": "http://10.0.5.2:4040/jobs/job?id=91",
+              "$$hashKey": "object:1295"
+            },
+            {
+              "jobUrl": "http://10.0.5.2:4040/jobs/job?id=92",
+              "$$hashKey": "object:1296"
+            },
+            {
+              "jobUrl": "http://10.0.5.2:4040/jobs/job?id=93",
+              "$$hashKey": "object:1297"
+            },
+            {
+              "jobUrl": "http://10.0.5.2:4040/jobs/job?id=94",
+              "$$hashKey": "object:1298"
+            },
+            {
+              "jobUrl": "http://10.0.5.2:4040/jobs/job?id=95",
+              "$$hashKey": "object:1299"
+            },
+            {
+              "jobUrl": "http://10.0.5.2:4040/jobs/job?id=96",
+              "$$hashKey": "object:1300"
+            },
+            {
+              "jobUrl": "http://10.0.5.2:4040/jobs/job?id=97",
+              "$$hashKey": "object:1301"
+            },
+            {
+              "jobUrl": "http://10.0.5.2:4040/jobs/job?id=98",
+              "$$hashKey": "object:1302"
+            },
+            {
+              "jobUrl": "http://10.0.5.2:4040/jobs/job?id=99",
+              "$$hashKey": "object:1303"
+            },
+            {
+              "jobUrl": "http://10.0.5.2:4040/jobs/job?id=100",
+              "$$hashKey": "object:1304"
+            },
+            {
+              "jobUrl": "http://10.0.5.2:4040/jobs/job?id=101",
+              "$$hashKey": "object:1305"
+            },
+            {
+              "jobUrl": "http://10.0.5.2:4040/jobs/job?id=102",
+              "$$hashKey": "object:1306"
+            },
+            {
+              "jobUrl": "http://10.0.5.2:4040/jobs/job?id=103",
+              "$$hashKey": "object:1307"
+            },
+            {
+              "jobUrl": "http://10.0.5.2:4040/jobs/job?id=104",
+              "$$hashKey": "object:1308"
+            },
+            {
+              "jobUrl": "http://10.0.5.2:4040/jobs/job?id=105",
+              "$$hashKey": "object:1309"
+            },
+            {
+              "jobUrl": "http://10.0.5.2:4040/jobs/job?id=106",
+              "$$hashKey": "object:1310"
+            },
+            {
+              "jobUrl": "http://10.0.5.2:4040/jobs/job?id=107",
+              "$$hashKey": "object:1311"
+            },
+            {
+              "jobUrl": "http://10.0.5.2:4040/jobs/job?id=108",
+              "$$hashKey": "object:1312"
+            },
+            {
+              "jobUrl": "http://10.0.5.2:4040/jobs/job?id=109",
+              "$$hashKey": "object:1313"
+            },
+            {
+              "jobUrl": "http://10.0.5.2:4040/jobs/job?id=110",
+              "$$hashKey": "object:1314"
+            },
+            {
+              "jobUrl": "http://10.0.5.2:4040/jobs/job?id=111",
+              "$$hashKey": "object:1315"
+            },
+            {
+              "jobUrl": "http://10.0.5.2:4040/jobs/job?id=112",
+              "$$hashKey": "object:1316"
+            },
+            {
+              "jobUrl": "http://10.0.5.2:4040/jobs/job?id=113",
+              "$$hashKey": "object:1317"
+            },
+            {
+              "jobUrl": "http://10.0.5.2:4040/jobs/job?id=114",
+              "$$hashKey": "object:1318"
+            },
+            {
+              "jobUrl": "http://10.0.5.2:4040/jobs/job?id=115",
+              "$$hashKey": "object:1319"
+            }
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1687414039800_1703488187",
+      "id": "paragraph_1687414039800_1703488187",
+      "dateCreated": "2023-06-22T06:07:19+0000",
+      "dateStarted": "2023-06-22T17:15:13+0000",
+      "dateFinished": "2023-06-22T17:15:25+0000",
+      "status": "FINISHED",
+      "$$hashKey": "object:688"
+    },
+    {
+      "text": "data.select(\"cuartos_Disponibles_del_Hogar\",\"cuartos_Exclucivas_para_Dormir\",\"cuartos_Exclucivas_Para_Negocios\",\"cuarto_Exclusivas_para_Cosina\").summary().show",
+      "user": "anonymous",
+      "dateUpdated": "2023-06-22T17:15:32+0000",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+-------+-----------------------------+------------------------------+--------------------------------+-----------------------------+\n|summary|cuartos_Disponibles_del_Hogar|cuartos_Exclucivas_para_Dormir|cuartos_Exclucivas_Para_Negocios|cuarto_Exclusivas_para_Cosina|\n+-------+-----------------------------+------------------------------+--------------------------------+-----------------------------+\n|  count|                        26580|                         26580|                           26580|                        26580|\n|   mean|           3.4603837471783296|            2.3968773513920243|             0.04334085778781038|           1.0399172310007525|\n| stddev|           1.3394949568297714|            1.0929959562062133|             0.21337138068131398|           0.1957684539306393|\n|    min|                            1|                             0|                               0|                            1|\n|    25%|                            3|                             2|                               0|                            1|\n|    50%|                            3|                             2|                               0|                            1|\n|    75%|                            4|                             3|                               0|                            1|\n|    max|                           13|                            10|                               3|                            2|\n+-------+-----------------------------+------------------------------+--------------------------------+-----------------------------+\n\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            {
+              "jobUrl": "http://10.0.5.2:4040/jobs/job?id=118",
+              "$$hashKey": "object:1817"
+            },
+            {
+              "jobUrl": "http://10.0.5.2:4040/jobs/job?id=119",
+              "$$hashKey": "object:1818"
+            }
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1687451802747_212127723",
+      "id": "paragraph_1687451802747_212127723",
+      "dateCreated": "2023-06-22T16:36:42+0000",
+      "dateStarted": "2023-06-22T17:15:32+0000",
+      "dateFinished": "2023-06-22T17:15:34+0000",
+      "status": "FINISHED",
+      "$$hashKey": "object:689"
+    },
+    {
+      "text": "data.select(\"tiene_Vehiculos\",\"cuantos_Vehiculos\",\"tiene_Motos\",\"cuantas_Motos\").summary().show",
+      "user": "anonymous",
+      "dateUpdated": "2023-06-22T17:26:24+0000",
+      "progress": 33,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+-------+-------------------+------------------+------------------+------------------+\n|summary|    tiene_Vehiculos| cuantos_Vehiculos|       tiene_Motos|     cuantas_Motos|\n+-------+-------------------+------------------+------------------+------------------+\n|  count|              26580|             26580|             26580|             26580|\n|   mean|  1.741948833709556|1.1370462166496573|1.8954100827689992|1.0669064748201438|\n| stddev|0.43757052611725283|0.4021625263875363|0.3060300474391057|0.2810786014031837|\n|    min|                  1|                  |                 1|                  |\n|    25%|                  1|               1.0|                 2|               1.0|\n|    50%|                  2|               1.0|                 2|               1.0|\n|    75%|                  2|               1.0|                 2|               1.0|\n|    max|                  2|                 6|                 2|                 4|\n+-------+-------------------+------------------+------------------+------------------+\n\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            {
+              "jobUrl": "http://10.0.5.2:4040/jobs/job?id=120",
+              "$$hashKey": "object:1868"
+            },
+            {
+              "jobUrl": "http://10.0.5.2:4040/jobs/job?id=121",
+              "$$hashKey": "object:1869"
+            }
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1687454472244_1609586409",
+      "id": "paragraph_1687454472244_1609586409",
+      "dateCreated": "2023-06-22T17:21:12+0000",
+      "dateStarted": "2023-06-22T17:26:24+0000",
+      "dateFinished": "2023-06-22T17:26:26+0000",
+      "status": "FINISHED",
+      "$$hashKey": "object:690"
+    },
+    {
+      "text": "data.select(\"gastos_Combustible_Super\",\"gastos_Combustible_Extra\",\"gastos_Combustible_Diesel\",\"gastos_Combustible_Ecopais\",\"gastos_Electricidad\",\"gastos_Gas\").summary().show",
+      "user": "anonymous",
+      "dateUpdated": "2023-06-22T17:15:22+0000",
+      "progress": 33,
+      "config": {
+        "colWidth": 12,
+        "fontSize": 9,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+-------+------------------------+------------------------+-------------------------+--------------------------+-------------------+-----------------+\n|summary|gastos_Combustible_Super|gastos_Combustible_Extra|gastos_Combustible_Diesel|gastos_Combustible_Ecopais|gastos_Electricidad|       gastos_Gas|\n+-------+------------------------+------------------------+-------------------------+--------------------------+-------------------+-----------------+\n|  count|                   26580|                   26580|                    26580|                     26580|              26580|            26580|\n|   mean|       73.62068965517241|       52.73880082701585|       56.464872944693575|         53.37773042088439| 12.189655172413794|             21.5|\n| stddev|       70.91564422226146|      42.468522124600455|        49.79214918569231|         40.58859634857238| 12.108365814015755|39.00854607219637|\n|    min|                        |                        |                         |                          |                   |                 |\n|    25%|                    30.0|                    25.0|                     30.0|                      24.0|                5.0|              1.0|\n|    50%|                    60.0|                    50.0|                     50.0|                      40.0|                7.0|              2.0|\n|    75%|                   100.0|                    60.0|                     70.0|                      75.0|               15.0|              3.0|\n|    max|                     999|                     999|                       90|                        90|                  8|               80|\n+-------+------------------------+------------------------+-------------------------+--------------------------+-------------------+-----------------+\n\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            {
+              "jobUrl": "http://10.0.5.2:4040/jobs/job?id=116",
+              "$$hashKey": "object:1919"
+            },
+            {
+              "jobUrl": "http://10.0.5.2:4040/jobs/job?id=117",
+              "$$hashKey": "object:1920"
+            }
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1687414093479_1983922367",
+      "id": "paragraph_1687414093479_1983922367",
+      "dateCreated": "2023-06-22T06:08:13+0000",
+      "dateStarted": "2023-06-22T17:15:22+0000",
+      "dateFinished": "2023-06-22T17:15:30+0000",
+      "status": "FINISHED",
+      "$$hashKey": "object:691"
+    },
+    {
+      "user": "anonymous",
+      "progress": 0,
+      "config": {
+        "colWidth": 12,
+        "fontSize": 9,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1687453560305_1089104226",
+      "id": "paragraph_1687453560305_1089104226",
+      "dateCreated": "2023-06-22T17:06:00+0000",
+      "status": "READY",
+      "$$hashKey": "object:692"
+    }
+  ],
+  "name": "trabajoClase",
+  "id": "2J3UKZK3J",
+  "defaultInterpreterGroup": "spark",
+  "version": "0.10.1",
+  "noteParams": {},
+  "noteForms": {},
+  "angularObjects": {},
+  "config": {
+    "isZeppelinNotebookCronEnable": false,
+    "looknfeel": "default",
+    "personalizedMode": "false"
+  },
+  "info": {},
+  "path": "/aa2023/ob/trabajoClase"
+}
