@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Diccionario de Datos</title>
+  <style>
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    th, td {
+      padding: 8px;
+      text-align: left;
+      border-bottom: 1px solid #ddd;
+    }
+    th {
+      background-color: #f2f2f2;
+    }
+  </style>
+</head>
+<body>
+  <h1>Diccionario de Datos</h1>
+  <table>
+    <tr>
+      <th>Entidad</th>
+      <th>Atributo</th>
+      <th>Tipo de Datos</th>
+      <th>Descripción</th>
+    </tr>
+    <tr>
+      <td>Vivienda</td>
+      <td>tipo_vivienda</td>
+      <td>Cadena de caracteres</td>
+      <td>Tipo de vivienda</td>
+    </tr>
+    <tr>
+      <td>Vivienda</td>
+      <td>via_acceso</td>
+      <td>Cadena de caracteres</td>
+      <td>Vía de acceso a la vivienda</td>
+    </tr>
+    <tr>
+      <td>Vivienda</td>
+      <td>ciudad</td>
+      <td>Cadena de caracteres</td>
+      <td>Ciudad donde se encuentra la vivienda</td>
+    </tr>
+    <tr>
+      <td>Vivienda</td>
+      <td>periodo</td>
+      <td>Cadena de caracteres</td>
+      <td>Periodo de tiempo relacionado con la vivienda</td>
+    </tr>
+    <tr>
+      <td>Vivienda</td>
+      <td>mes</td>
+      <td>Cadena de caracteres</td>
+      <td>Mes relacionado con la vivienda</td>
+    </tr>
+    <tr>
+      <td>Vivienda</td>
+      <td>area</td>
+      <td>Numérico</td>
+      <td>Área de la vivienda</td>
+    </tr>
+    <tr>
+      <td>Vivienda</td>
+      <td>panel</td>
+      <td>Cadena de caracteres</td>
+      <td>Panel de control de la vivienda</td>
+    </tr>
+    <tr>
+      <td>Datos_vivienda</td>
+      <td>material_techo</td>
+      <td>Cadena de caracteres</td>
+      <td>Material del techo de la vivienda</td>
+    </tr>
+    <tr>
+      <td>Datos_vivienda</td>
+      <td>espacio_techo</td>
+      <td>Cadena de caracteres</td>
+      <td>Espacio del techo de la vivienda</td>
+    </tr>
+    <tr>
+      <td>Datos_vivienda</td>
+      <td>estado_piso</td>
+      <td>Cadena de caracteres</td>
+      <td>Estado del piso de la vivienda</td>
+    </tr>
+    <tr>
+      <td>Datos_vivienda</td>
+      <td>material_piso</td>
+      <td>Cadena de caracteres</td>
+      <td>Material del piso de la vivienda</td>
+    </tr>
+    <tr>
+      <td>Datos_vivienda</td>
+      <td>material_parede</td>
+      <td>Cadena de caracteres</td>
+      <td>Material de las paredes de la vivienda</td>
+    </tr>
+    <tr>
+      <td>Datos_vivienda</td>
+      <td>estado_paredes</td>
+      <td>Cadena de caracteres</td>
+      <td>Estado de las paredes de la vivienda</td>
+    </tr>
+    <tr>
+      <td>Datos_vivienda</td>
+      <td>lugar_obtención_agua</td>
+      <td>Cadena de caracteres</td>
+      <td>Lugar de obtención de agua</td>
+    </tr>
+    <tr>
+      <td>Datos_vivienda</td>
+      <td>medidorAgua</td>
+      <td>Booleano</td>
+      <td>Medidor de agua en la vivienda</td>
+    </tr>
+    <tr>
+      <td>Datos_vivienda</td>
+      <td>agua_juntaAgua</td>
+      <td>Booleano</td>
+      <td>Agua obtenida de una junta de agua</td>
+    </tr>
+    <tr>
+      <td>Datos_vivienda</td>
+      <td>agua_vivienda_es</td>
+      <td>Cadena de caracteres</td>
+      <td>Agua disponible en la vivienda</td>
+    </tr>
+    <tr>
+      <td>Datos_vivienda</td>
+      <td>formaTenencia_vivienda</td>
+      <td>Cadena de caracteres</td>
+      <td>Forma de tenencia de la vivienda</td>
+    </tr>
+    <tr>
+      <td>Hogar</td>
+      <td>periodo</td>
+      <td>Cadena de caracteres</td>
+      <td>Periodo de tiempo relacionado con el hogar</td>
+    </tr>
+    <tr>
+      <td>Hogar</td>
+      <td>estrato</td>
+      <td>Numérico</td>
+      <td>Estrato socioeconómico del hogar</td>
+    </tr>
+    <tr>
+      <td>Hogar</td>
+      <td>fexp</td>
+      <td>Numérico</td>
+      <td>Factor de expansión</td>
+    </tr>
+    <tr>
+      <td>Hogar</td>
+      <td>upm</td>
+      <td>Numérico</td>
+      <td>Unidad primaria de muestreo</td>
+    </tr>
+    <tr>
+      <td>Hogar</td>
+      <td>parentesco_propietario</td>
+      <td>Cadena de caracteres</td>
+      <td>Parentesco del propietario con el hogar</td>
+    </tr>
+    <tr>
+      <td>Sanidad</td>
+      <td>ducha</td>
+      <td>Booleano</td>
+      <td>Disponibilidad de ducha en el hogar</td>
+    </tr>
+    <tr>
+      <td>Sanidad</td>
+      <td>tipo_servicio_higienico</td>
+      <td>Cadena de caracteres</td>
+      <td>Tipo de servicio higiénico en el hogar</td>
+    </tr>
+    <tr>
+      <td>Sanidad</td>
+      <td>servicio_higienico_miembros</td>
+      <td>Numérico</td>
+      <td>Número de miembros con acceso a servicio higiénico</td>
+    </tr>
+    <tr>
+      <td>Sanidad</td>
+      <td>instalación_sanitaria</td>
+      <td>Cadena de caracteres</td>
+      <td>Tipo de instalación sanitaria</td>
+    </tr>
+    <tr>
+      <td>Sanidad</td>
+      <td>como_eliminan_basura</td>
+      <td>Cadena de caracteres</td>
+      <td>Método de eliminación de basura utilizado</td>
+    </tr>
+    <tr>
+      <td>Servicios</td>
+      <td>arriendo_mes</td>
+      <td>Numérico</td>
+      <td>Costo de arriendo mensual</td>
+    </tr>
+    <tr>
+      <td>Servicios</td>
+      <td>agua</td>
+      <td>Booleano</td>
+      <td>Disponibilidad de agua en el hogar</td>
+    </tr>
+    <tr>
+      <td>Servicios</td>
+      <td>luz</td>
+      <td>Booleano</td>
+      <td>Disponibilidad de luz en el hogar</td>
+    </tr>
+    <tr>
+      <td>Servicios</td>
+      <td>cocina</td>
+      <td>Booleano</td>
+      <td>Disponibilidad de cocina en el hogar</td>
+    </tr>
+    <tr>
+      <td>Servicios</td>
+      <td>alumbrado</td>
+      <td>Booleano</td>
+      <td>Disponibilidad de alumbrado en el hogar</td>
+    </tr>
+    <tr>
+      <td>Estructura</td>
+      <td>cuartos</td>
+      <td>Numérico</td>
+      <td>Número de cuartos en la vivienda</td>
+    </tr>
+    <tr>
+      <td>Estructura</td>
+      <td>dormitorio</td>
+      <td>Numérico</td>
+      <td>Número de dormitorios en la vivienda</td>
+    </tr>
+    <tr>
+      <td>Estructura</td>
+      <td>negocio_cuartos</td>
+      <td>Booleano</td>
+      <td>Presencia de un negocio en los cuartos</td>
+    </tr>
+    <tr>
+      <td>Estructura</td>
+      <td>espacio_cocina</td>
+      <td>Cadena de caracteres</td>
+      <td>Espacio disponible en la cocina</td>
+    </tr>
+    <tr>
+      <td>Estructura</td>
+      <td>material_cocina</td>
+      <td>Cadena de caracteres</td>
+      <td>Material de la cocina</td>
+    </tr>
+    <tr>
+      <td>Movilidad</td>
+      <td>vehiculos</td>
+      <td>Booleano</td>
+      <td>Presencia de vehículos en el hogar</td>
+    </tr>
+    <tr>
+      <td>Movilidad</td>
+      <td>cantidad_v</td>
+      <td>Numérico</td>
+      <td>Cantidad de vehículos en el hogar</td>
+    </tr>
+    <tr>
+      <td>Movilidad</td>
+      <td>motos</td>
+      <td>Booleano</td>
+      <td>Presencia de motos en el hogar</td>
+    </tr>
+    <tr>
+      <td>Movilidad</td>
+      <td>cantidad_m</td>
+      <td>Numérico</td>
+      <td>Cantidad de motos en el hogar</td>
+    </tr>
+    <tr>
+      <td>Movilidad</td>
+      <td>abastecimiento_super</td>
+      <td>Booleano</td>
+      <td>Abastecimiento de combustible en supermercados</td>
+    </tr>
+    <tr>
+      <td>Movilidad</td>
+      <td>gasto_super</td>
+      <td>Numérico</td>
+      <td>Gasto en combustible en supermercados</td>
+    </tr>
+    <tr>
+      <td>Movilidad</td>
+      <td>abastecimiento_extra</td>
+      <td>Booleano</td>
+      <td>Abastecimiento de combustible en otros lugares</td>
+    </tr>
+    <tr>
+      <td>Movilidad</td>
+      <td>gasto_ex</td>
+      <td>Numérico</td>
+      <td>Gasto en combustible en otros lugares</td>
+    </tr>
+    <tr>
+      <td>Movilidad</td>
+      <td>abastecimiento_diesel</td>
+      <td>Booleano</td>
+      <td>Abastecimiento de combustible diesel</td>
+    </tr>
+    <tr>
+      <td>Movilidad</td>
+      <td>gasto_di</td>
+      <td>Numérico</td>
+      <td>Gasto en combustible diesel</td>
+    </tr>
+    <tr>
+      <td>Movilidad</td>
+      <td>abastecimiento_eco</td>
+      <td>Booleano</td>
+      <td>Abastecimiento de combustible ecológico</td>
+    </tr>
+    <tr>
+      <td>Movilidad</td>
+      <td>gasto_eco</td>
+      <td>Numérico</td>
+      <td>Gasto en combustible ecológico</td>
+    </tr>
+    <tr>
+      <td>Movilidad</td>
+      <td>abastecimiento_el</td>
+      <td>Booleano</td>
+      <td>Abastecimiento de combustible eléctrico</td>
+    </tr>
+    <tr>
+      <td>Movilidad</td>
+      <td>gasto_el</td>
+      <td>Numérico</td>
+      <td>Gasto en combustible eléctrico</td>
+    </tr>
+    <tr>
+      <td>Movilidad</td>
+      <td>abastecimiento_gas</td>
+      <td>Booleano</td>
+      <td>Abastecimiento de gas</td>
+    </tr>
+    <tr>
+      <td>Movilidad</td>
+      <td>gasto_gas</td>
+      <td>Numérico</td>
+      <td>Gasto en gas</td>
+    </tr>
+  </tbody>
+</table>
